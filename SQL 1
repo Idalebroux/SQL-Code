@@ -37,4 +37,4 @@ select count(*),
         
         END as letter_grade
 
-from student_grades group by letter_grade ;
+from student_grades group by letter_grade;
