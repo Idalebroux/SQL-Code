@@ -1,0 +1,24 @@
+/* using multiple join statements to find the top 10 invoice totals by $ in descending order*/
+
+SELECT
+	e.FirstName,
+	e.LastName,
+	e.EmployeeId,
+	c.FirstName,
+	c.LastName,
+	c.SupportRepId,
+	i.CustomerId,
+	i.total
+FROM	
+	invoices AS i
+INNER JOIN
+	customers AS c
+ON 
+	i.CustomerId = c.CustomerId
+INNER JOIN
+employees as e
+ON
+	c.SupportRepId = e.EmployeeId
+ORDER BY
+	i.total DESC
+LIMIT 10
